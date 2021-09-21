@@ -67,11 +67,11 @@
 // lastItem.style.color = 'blue';
 
 // Deliverable
-let secondItem = document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.backgroundColor = 'green';
+// let secondItem = document.querySelector('.list-group-item:nth-child(2)');
+// secondItem.style.backgroundColor = 'green';
 
-let thirdItem = document.querySelector('.list-group-item:nth-child(3)');
-thirdItem.style.visibility = 'hidden';
+// let thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+// thirdItem.style.visibility = 'hidden';
 
 
 // QuerySelectorAll
@@ -92,11 +92,91 @@ thirdItem.style.visibility = 'hidden';
 // }
 
 // Deliverable
-let second = document.querySelectorAll("li:nth-child(2)");
-second[0].style.color = 'green';
+// let second = document.querySelectorAll("li:nth-child(2)");
+// second[0].style.color = 'green';
 
-let oddItems = document.querySelectorAll("li:nth-child(odd)");
+// let oddItems = document.querySelectorAll("li:nth-child(odd)");
 
-for (let i = 0; i < oddItems.length; i++) {
-  oddItems[i].style.backgroundColor = "green";
-}
+// for (let i = 0; i < oddItems.length; i++) {
+//   oddItems[i].style.backgroundColor = "green";
+// }
+
+
+// DOM Traversal
+// let itemList = document.querySelector('#items');
+
+// parentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentNode.parentNode.parentNode);
+
+// parentElement
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentElement.parentElement.parentElement);
+
+// childNodes
+// console.log(itemList.childNodes);
+
+// children
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor = 'yellow';
+
+// // firstChild
+// console.log(itemList.firstChild);
+
+// // firstElementChild
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'Hello 1';
+
+// // lastChild
+// console.log(itemList.lastChild);
+
+// // lastElementChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'Hello 4';
+
+// // nextSibling
+// console.log(itemList.nextSibling);
+
+// // nextElementSibling
+// console.log(itemList.nextElementSibling);
+
+// // previousSibling
+// console.log(itemList.previousSibling);
+
+// // previousElementSibling
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color = 'green';
+
+// createElement
+
+// Create a new div and add attributes
+let newDiv = document.createElement('div');
+newDiv.className = 'hello';
+newDiv.id = 'test';
+// newDiv.title = 'Hello Div';
+newDiv.setAttribute('title', 'Hello Div');
+
+// Create a new text node and append into div
+let newText = document.createTextNode('Hello World');
+newDiv.appendChild(newText);
+
+// Add the created text into the webpage
+let container = document.querySelector('header .container');
+let h1 = document.querySelector('header h1');
+container.insertBefore(newDiv, h1);
+
+newDiv.style.fontSize = '30px';
+console.log(newDiv);
+
+// Add a li element to a existing list
+let newLi = document.createElement('li');
+let itemList = document.querySelector('ul#items');
+let firstLi = itemList.firstElementChild;
+let newLiText = document.createTextNode('Hello World');
+newLi.appendChild(newLiText);
+itemList.insertBefore(newLi, firstLi);
+
+console.log(newLi);
